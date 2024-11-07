@@ -1,0 +1,24 @@
+{
+  "originHash" : "f40c765e0e3de3cc4a68d57c418c2b6b148323c82b77648dc743b6cd88293315",
+  "pins" : [
+    {
+      "identity" : "capacitor-swift-pm",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ionic-team/capacitor-swift-pm",
+      "state" : {
+        "revision" : "272e5dcd26260c6f3798b024c9cb3ffa52850ec7",
+        "version" : "6.1.2"
+      }
+    },
+    {
+      "identity" : "felt-embedded-care-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/FeltClinic/felt-embedded-care-ios",
+      "state" : {
+        "revision" : "d1951b85f9f3fe45d0a680333d25e3f7b93c4118",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 3
+}
