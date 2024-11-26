@@ -340,7 +340,7 @@
 			repositoryURL = "https://github.com/FeltClinic/felt-embedded-care-ios";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 1.0.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

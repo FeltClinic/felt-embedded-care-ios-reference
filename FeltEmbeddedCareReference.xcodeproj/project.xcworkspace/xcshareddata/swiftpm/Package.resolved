@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/FeltClinic/felt-embedded-care-ios",
       "state" : {
-        "revision" : "d1951b85f9f3fe45d0a680333d25e3f7b93c4118",
-        "version" : "1.0.0"
+        "revision" : "c6e955a9dc0a0b76d1acc7872a34eab4fe2df8bd",
+        "version" : "1.0.3"
       }
     }
   ],
