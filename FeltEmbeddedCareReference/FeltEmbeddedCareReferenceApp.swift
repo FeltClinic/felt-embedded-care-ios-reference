@@ -9,6 +9,8 @@ struct FeltEmbeddedCareReferenceApp: App {
     @State var hasLaunched = false
     @State var showSettings = false
 
+    @State private var notificationDelegate = NotificationDelegate()
+
     var body: some Scene {
         WindowGroup {
             NavigationStack {
@@ -73,4 +75,21 @@ func initializeEmbeddedCare(sdkKey: String) async throws {
             lastName: "Smith"
         )
     )
+}
+
+class NotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
+
+    override init() {
+        super.init()
+        UNUserNotificationCenter.current().delegate = self
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification) async -> UNNotificationPresentationOptions {
+        .banner
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async {
+        _ = await EmbeddedCare.shared.handleNotification(response.notification)
+    }
+
 }

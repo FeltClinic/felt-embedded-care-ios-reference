@@ -53,6 +53,29 @@ struct FeltContentView: View {
                     EmbeddedCare.shared.presentExperience(.pricingScreen)
                 }
             }
+
+            // Send a local notification to test notification handling
+            ToolbarItem(placement: .topBarTrailing) {
+                Button("Notification") {
+                    Task {
+                        do {
+                            guard try await UNUserNotificationCenter.current().requestAuthorization(options: .alert) else { return }
+
+                            let content = UNMutableNotificationContent()
+                            content.title = "Felt Notification"
+                            content.body = "This is a test notification"
+                            content.userInfo = ["felt-route": "/pricing"]
+
+                            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.5, repeats: false)
+
+                            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+                            try await UNUserNotificationCenter.current().add(request)
+                        } catch {
+                            print("Failed to send test notification: \(error)")
+                        }
+                    }
+                }
+            }
         }
         // URL handling
         .onOpenURL { url in
